@@ -1,3 +1,11 @@
 packages:
   - packages/*
   - examples/*
+
+overrides:
+  # @angular/compiler-cli 22 declares ^1.4.14 but calls encodeRangeMappings,
+  # which only 1.6.0 exports; the lockfile's existing 1.5.5 breaks `ng build`.
+  '@angular/compiler-cli>@jridgewell/sourcemap-codec': ^1.6.0
+  # @angular/cli 22 pins zod 4.6.5. One zod 4 in the workspace keeps a single
+  # @json-render/core instance, so the plugin's catalog types match the examples'.
+  'zod@^4': 4.6.5

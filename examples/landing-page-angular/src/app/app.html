@@ -1,0 +1,32 @@
+<main class="layout">
+  <aside class="panel">
+    <h1 class="mono">genkitx-json-render · Angular</h1>
+    <p class="muted">
+      Genkit streams a json-render spec from Gemini; the same Angular Material catalog renders it.
+    </p>
+    <label for="pitch" class="label">Pitch</label>
+    <textarea
+      id="pitch"
+      rows="4"
+      maxlength="400"
+      placeholder="Describe a product…"
+      [value]="pitch()"
+      (input)="pitch.set($any($event.target).value)"
+    ></textarea>
+    <button type="button" class="run" [disabled]="!canRun()" (click)="run()">
+      {{ streaming() ? 'Generating…' : 'Generate landing page' }}
+    </button>
+    @if (error(); as message) {
+      <p class="error">{{ message }}</p>
+    }
+    <p class="mono status">{{ status() }}</p>
+  </aside>
+
+  <section class="canvas">
+    @if (spec(); as spec) {
+      <json-render [spec]="spec" [registry]="registry" [loading]="streaming()" />
+    } @else {
+      <div class="empty mono">Describe a product and hit generate.</div>
+    }
+  </section>
+</main>

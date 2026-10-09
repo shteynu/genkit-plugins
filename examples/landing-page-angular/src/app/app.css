@@ -1,0 +1,113 @@
+.layout {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 24px;
+  min-height: 100vh;
+  padding: 24px;
+  box-sizing: border-box;
+}
+
+@media (min-width: 768px) {
+  .layout {
+    grid-template-columns: 320px 1fr;
+  }
+
+  .panel {
+    position: sticky;
+    top: 24px;
+    align-self: start;
+  }
+}
+
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.muted,
+.label,
+.status,
+.empty {
+  color: var(--mat-sys-on-surface-variant);
+}
+
+.muted {
+  margin: 0;
+  font-size: 14px;
+}
+
+.label {
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+
+textarea {
+  resize: none;
+  padding: 8px 12px;
+  border: 1px solid var(--mat-sys-outline-variant);
+  border-radius: 8px;
+  font: inherit;
+  font-size: 14px;
+  color: var(--mat-sys-on-surface);
+  background: var(--mat-sys-surface-container);
+
+  &:focus-visible {
+    outline: 2px solid var(--mat-sys-primary);
+  }
+}
+
+.run {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 8px;
+  font: inherit;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--mat-sys-on-primary);
+  background: var(--mat-sys-primary);
+  cursor: pointer;
+
+  &:disabled {
+    cursor: not-allowed;
+    opacity: 0.4;
+  }
+}
+
+.error {
+  margin: 0;
+  font-size: 14px;
+  color: var(--mat-sys-error);
+}
+
+.status {
+  margin: 0;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+}
+
+.canvas {
+  min-height: 70vh;
+  padding: 32px;
+  border: 1px solid var(--mat-sys-outline-variant);
+  border-radius: 16px;
+  background: var(--mat-sys-surface-container-low);
+}
+
+.empty {
+  display: grid;
+  place-items: center;
+  height: 50vh;
+  font-size: 13px;
+}

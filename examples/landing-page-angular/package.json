@@ -1,0 +1,47 @@
+{
+  "name": "@genkitx-json-render/example-landing-page-angular",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently -n server,web -c magenta,cyan \"pnpm dev:server\" \"pnpm dev:web\"",
+    "dev:server": "tsx watch --env-file-if-exists=.env server/index.ts",
+    "dev:web": "ng serve",
+    "build": "ng build",
+    "typecheck": "tsc -p tsconfig.app.json --noEmit && tsc -p tsconfig.server.json --noEmit",
+    "clean": "rm -rf dist .angular"
+  },
+  "dependencies": {
+    "@angular/cdk": "^22.2.0",
+    "@angular/common": "^22.2.0",
+    "@angular/compiler": "^22.2.0",
+    "@angular/core": "^22.2.0",
+    "@angular/forms": "^22.2.0",
+    "@angular/material": "^22.2.0",
+    "@angular/platform-browser": "^22.2.0",
+    "@genkit-ai/express": "^1.36.0",
+    "@genkit-ai/google-genai": "^1.36.0",
+    "@json-render/core": "^0.21.0",
+    "genkit": "^1.36.0",
+    "genkitx-json-render": "workspace:*",
+    "ngx-json-render": "^0.8.0",
+    "ngx-json-render-material": "^0.3.10",
+    "rxjs": "~7.8.0",
+    "tslib": "^2.3.0",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@angular/build": "^22.2.2",
+    "@angular/cli": "^22.2.2",
+    "@angular/compiler-cli": "^22.2.0",
+    "@types/node": "^22.10.5",
+    "concurrently": "^9.2.1",
+    "tsx": "^4.19.2",
+    "typescript": "~6.0.2"
+  },
+  "dependenciesMeta": {
+    "genkitx-json-render": {
+      "injected": true
+    }
+  }
+}

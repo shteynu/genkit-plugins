@@ -15,13 +15,15 @@ A pnpm + Turborepo monorepo of [Genkit](https://genkit.dev) plugins by
 
 ## Examples
 
-All examples use [`@json-render/shadcn`](https://www.npmjs.com/package/@json-render/shadcn)
-(shadcn/ui + Tailwind v4) for the rendered components.
+The React examples use [`@json-render/shadcn`](https://www.npmjs.com/package/@json-render/shadcn)
+(shadcn/ui + Tailwind v4) for the rendered components; the Angular one uses
+[`ngx-json-render-material`](https://www.npmjs.com/package/ngx-json-render-material) (Angular Material).
 
 | Example | Shows |
 | --- | --- |
 | [`landing-page`](./examples/landing-page) | **Flow** — `defineRenderFlow` streams a UI spec from Gemini into a Vite + React client that renders it with the same catalog. |
 | [`agentic-chat`](./examples/agentic-chat) | **Tool** — `defineRenderTool`: a chat where the model decides to render UI cards mid-conversation. |
+| [`landing-page-angular`](./examples/landing-page-angular) | **Flow** — the `landing-page` demo with an Angular client, rendered by [`ngx-json-render`](https://www.npmjs.com/package/ngx-json-render). |
 
 ## Development
 
